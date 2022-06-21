@@ -36,5 +36,7 @@ int main(int argc , char *arg[])
 	{
 		cout<< "Match :)\n";
 	}
+	fclose(inputfp);
+	fclose(outputfp);
 return 0;
 }
