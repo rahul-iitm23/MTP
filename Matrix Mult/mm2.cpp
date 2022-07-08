@@ -85,7 +85,7 @@ int main(int argc, char *arg[])
 	// Allocate memory buffer on device
 	cl_mem d_A = clCreateBuffer(context, CL_MEM_READ_ONLY, p*q*sizeof(int), NULL, &status);
 	cl_mem d_B = clCreateBuffer(context, CL_MEM_READ_ONLY, q*r*sizeof(int), NULL, &status);
-	cl_mem d_C = clCreateBuffer(context, CL_MEM_READ_ONLY,p*r*sizeof(int), NULL, &status);
+	cl_mem d_C = clCreateBuffer(context, CL_MEM_READ_WRITE,p*r*sizeof(int), NULL, &status);
 
 	// Copy data from host to device
 	status = clEnqueueWriteBuffer(command_queue, d_A, CL_TRUE, 0, p*q*sizeof(int), A,0, NULL , NULL);
